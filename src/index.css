@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap');
+
+@import "tailwindcss";
+
+/* =========================================================
+   Global
+   ========================================================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  min-width: 0;
+  background: #faf3e8;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   Typography
+   ========================================================= */
+
+.font-display,
+.font-serif {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+
+/* =========================================================
+   Falling Flowers
+   ========================================================= */
+
+.rose-petal {
+  border-radius: 100% 0 100% 0;
+
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--petal-color) 70%, white 30%) 0%,
+    var(--petal-color) 55%,
+    color-mix(in srgb, var(--petal-color) 80%, black 20%) 100%
+  );
+
+  box-shadow:
+    0 2px 5px rgba(125, 45, 55, 0.12),
+    inset -2px -1px 3px rgba(100, 20, 30, 0.12);
+
+  transform-origin: center;
+
+  animation-name: petal-fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+
+/* =========================================================
+   Rose / Flower Falling Animation
+   ========================================================= */
+
+@keyframes petal-fall {
+  0% {
+    transform:
+      translate3d(0, -10vh, 0)
+      rotate(0deg);
+  }
+
+  25% {
+    transform:
+      translate3d(
+        calc(var(--petal-drift) * 0.35),
+        25vh,
+        0
+      )
+      rotate(calc(var(--petal-rotation) * 0.25));
+  }
+
+  50% {
+    transform:
+      translate3d(
+        calc(var(--petal-drift) * -0.2),
+        50vh,
+        0
+      )
+      rotate(calc(var(--petal-rotation) * 0.55));
+  }
+
+  75% {
+    transform:
+      translate3d(
+        calc(var(--petal-drift) * 0.7),
+        75vh,
+        0
+      )
+      rotate(calc(var(--petal-rotation) * 0.8));
+  }
+
+  100% {
+    transform:
+      translate3d(
+        var(--petal-drift),
+        115vh,
+        0
+      )
+      rotate(var(--petal-rotation));
+  }
+}
+
+
+/* =========================================================
+   Marigold Flowers
+   ========================================================= */
+
+.marigold-flower {
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at center,
+      #8f5a00 0 14%,
+      transparent 15%
+    ),
+    repeating-conic-gradient(
+      from 0deg,
+      var(--petal-color) 0deg 12deg,
+      #ffbf24 12deg 22deg
+    );
+
+  box-shadow:
+    0 2px 5px rgba(148, 92, 0, 0.2),
+    inset 0 0 4px rgba(255, 214, 90, 0.35);
+
+  transform-origin: center;
+
+  animation-name: petal-fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+
+/* =========================================================
+   Accessibility / Motion
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
