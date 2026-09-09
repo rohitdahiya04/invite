@@ -1,5 +1,5 @@
-import venueImage from '/images/hero/venue1.png';
 import { weddingData } from '../../data/weddingData'
+const venueImage = `${import.meta.env.BASE_URL}images/hero/venue1.png`
 
 export default function Venue() {
   const { venue } = weddingData

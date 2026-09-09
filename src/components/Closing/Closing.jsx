@@ -64,7 +64,7 @@ export default function Closing() {
             "
           >
             <img
-              src="/images/logo.png"
+            src={`${import.meta.env.BASE_URL}images/logo.png`}
               alt="Ragini and Rohit wedding logo"
               className="h-full w-full object-cover"
             />

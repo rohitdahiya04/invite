@@ -19,7 +19,7 @@ export default function Header() {
     >
       <div className="relative -mb-6">
         <img
-          src="/images/logo.png"
+          src={`${import.meta.env.BASE_URL}images/logo.png`}
           alt="Ragini & Rohit Wedding"
           className="
             h-24

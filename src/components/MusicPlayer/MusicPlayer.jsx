@@ -38,7 +38,7 @@ export default function MusicPlayer() {
     <>
       <audio
         ref={audioRef}
-        src="/music/wedding-song.mp3"
+        src={`${import.meta.env.BASE_URL}music/wedding-song.mp3`}
         autoPlay
         loop
         playsInline

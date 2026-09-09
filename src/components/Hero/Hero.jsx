@@ -1,5 +1,5 @@
-import heroImage from '/images/hero/phool-banri-banro.png'
 import { weddingData } from '../../data/weddingData'
+const heroImage = `${import.meta.env.BASE_URL}images/hero/phool-banri-banro.png`
 
 export default function Hero() {
   return (
